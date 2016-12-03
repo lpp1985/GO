@@ -135,6 +135,7 @@ func (Reader IO) Next() ([]byte, error) {
 		} else if err == bufio.ErrBufferFull || err == io.EOF {
 			if err == io.EOF {
 				status = err
+				out_tag = append(out_tag, line...)
 				break
 			}
 			out_tag = append(out_tag, line...)
