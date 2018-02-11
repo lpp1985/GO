@@ -62,6 +62,10 @@ func QC(datahandle *string, qc_number byte, c chan [6]int) {
 }
 
 func main() {
+	err := recover()
+	if err != nil {
+		fmt.Println(err)
+	}
 	result_channel := make(chan [6]int)
 
 	/* Get Option Parser
